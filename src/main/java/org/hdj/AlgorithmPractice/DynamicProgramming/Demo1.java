@@ -47,7 +47,9 @@ public class Demo1 {
 
         System.out.println(matrix[N][N]);
 
-        // //逐行填充表格
+
+
+
         for (int i = 1; i < matrix.length; i++) {
             for (int j = 1; j < matrix[0].length; j++) {
                 System.out.print(matrix[i][j] + " ");
