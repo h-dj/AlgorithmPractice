@@ -2,6 +2,8 @@ package org.hdj.AlgorithmPractice.List.LinkedList;
 
 import org.hdj.AlgorithmPractice.List.IList;
 
+import java.util.LinkedList;
+
 /**
  * 循环链表的实现
  *

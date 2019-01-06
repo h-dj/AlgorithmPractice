@@ -25,12 +25,12 @@ public class LinkedList<T> implements IList<T> {
     public void clear() {
         //先从头指针，开始遍历
         //如果节点的指针域为空，则遍历到链表尾部
-        for (LNode x = head; x.next != null; ) {
+        for (LNode x = head; x.next!= null; ) {
             //获取节点
             LNode node = x.next;
             //置空节点数据域和指针域，帮助垃圾回收
-            node.next = null;
-            node.data = null;
+            x.next = null;
+            x.data = null;
             //继续下一个节点
             x = node;
         }
