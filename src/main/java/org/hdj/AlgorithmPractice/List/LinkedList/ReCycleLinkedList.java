@@ -166,6 +166,7 @@ public class ReCycleLinkedList<T> implements IList<T> {
         return (T) remove.data;
     }
 
+
     /**
      * 按值查找节点的下标
      * <p>
