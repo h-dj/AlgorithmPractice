@@ -1,21 +1,21 @@
 package org.hdj.AlgorithmPractice.List.LinkedList;
 
-import com.sun.org.apache.bcel.internal.generic.LNEG;
 import org.hdj.AlgorithmPractice.List.IList;
 
 /**
- * 单链表的实现
+ * 循环链表的实现
  *
  * @param <T>
  */
-public class LinkedList<T> implements IList<T> {
+public class ReCycleLinkedList<T> implements IList<T> {
 
     //链表的头指针
     public LNode head;
 
-    public LinkedList() {
+    public ReCycleLinkedList() {
         //初始化带头结点的单链表
         this.head = new LNode();
+        this.head.next = this.head;
     }
 
     /**
@@ -23,25 +23,20 @@ public class LinkedList<T> implements IList<T> {
      */
     @Override
     public void clear() {
-        //先从头指针，开始遍历
-        //如果节点的指针域为空，则遍历到链表尾部
-        for (LNode x = head; x.next != null; ) {
-            //获取节点
-            LNode node = x.next;
-            //置空节点数据域和指针域，帮助垃圾回收
-            node.next = null;
-            node.data = null;
-            //继续下一个节点
-            x = node;
-        }
         //置空头指针
-        head.next = null;
+        head.next = head;
         head.data = null;
     }
 
+    /**
+     * 判断链表是否为空
+     * 头指针 是否指向头节点
+     *
+     * @return
+     */
     @Override
     public boolean isEmpty() {
-        return head.next == null;
+        return head.next == head;
     }
 
     @Override
@@ -51,11 +46,10 @@ public class LinkedList<T> implements IList<T> {
         //计数器
         int length = 0;
         //遍历节点
-        while (node != null) {
+        while (node != head) {
             node = node.next;
             length++;
         }
-
         return length;
     }
 
@@ -75,13 +69,13 @@ public class LinkedList<T> implements IList<T> {
         LNode node = head.next;
         //计数器
         int pos = 0;
-        //遍历节点，直到节点为空 或者 指向第 i 个节点退出循环
-        while (node != null && pos < i) {
+        //遍历节点，直到节点为头节点 或者 指向第 i 个节点退出循环
+        while (node != head && pos < i) {
             node = node.next; //指向后继节点
             ++pos;//计数器加一
         }
         //判断是否找到节点
-        if (node == null || pos > i)
+        if (node == head || pos > i)
             throw new RuntimeException("第 " + i + " 个元素不存在！");
 
         return (T) node.data;
@@ -89,24 +83,6 @@ public class LinkedList<T> implements IList<T> {
 
     /**
      * 插入元素到指定下标
-     * <p>
-     * 插入步骤
-     * 1. 找到插入位置 i 的前驱节点
-     * 2. 创建一个新的节点
-     * 3. 新节点的指针指向 原先 第 i个节点， 原第i 节点的前驱节点的指针指向新节点
-     * <p>
-     * 时间复杂度为; O(n)
-     * <p>
-     * 在不带头结点的链表中，执行插入操作需要多做一步操作
-     * <h1>1. 如果插入表头时</h1>
-     * LNode newNode = new LNode(t);
-     * newNode.next = head;
-     * head.next = newNode;
-     * <p>
-     * <h1>如果插入表中或表尾时，p: 第 (i-1)个节点 </h1>
-     * LNode newNode = new LNode(t);
-     * newNode.next = p.next;
-     * p.next = newNode;
      *
      * @param i
      * @param t
@@ -116,13 +92,13 @@ public class LinkedList<T> implements IList<T> {
         LNode p = head;
         int pos = -1;
         //1. 找到第 (i-1)个节点(位置 i 的前驱节点)
-        while (p.next != null && pos < i - 1) {
+        while (p.next != head && pos < i - 1) {
             p = p.next;
             pos++;
         }
 
         //判断插入位置的合法性
-        if (p == null && pos > i - 1)
+        if (p == head && pos > i - 1)
             throw new RuntimeException("插入节点的位置不合法！");
 
         //2. 创建一个新的节点
@@ -153,7 +129,7 @@ public class LinkedList<T> implements IList<T> {
     public void insertTail(T t) {
         //获取到最后的节点
         LNode tail = this.head;
-        while (tail.next != null) {
+        while (tail.next != head) {
             tail = tail.next;
         }
         //构造新的节点
@@ -166,14 +142,6 @@ public class LinkedList<T> implements IList<T> {
 
     /**
      * 链表的删除操作
-     * <p>
-     * 主要步骤
-     * <p>
-     * 1. 先判断链表是否为空， 否则执行第二步
-     * 2. 找到待删除节点的前驱节点
-     * 3. 把前驱节点的 指针指向待删除节点的指针指向的节点
-     * <p>
-     * 时间复杂度： O(n)
      *
      * @param i
      * @return
@@ -181,20 +149,20 @@ public class LinkedList<T> implements IList<T> {
     @Override
     public T remove(int i) {
 
-        LNode p = head;
+        LNode p = head.next;
         int pos = -1;
         //找到待删除节点的前驱节点
-        while (p.next != null && pos < i - 1) {
+        while (p != head && pos < i - 1) {
             p = p.next;
             ++pos;
         }
 
-        if (pos > i - 1 || p == null)
+        if (pos > i - 1 || p == head)
             throw new RuntimeException("删除节点的位置不合法！");
         //待删除节点
         LNode remove = p.next;
         //3. 第 （i-1) 节点的指针指向 (i+1)节点
-        p.next = remove.next;
+        p.next = p.next.next;
         return (T) remove.data;
     }
 
@@ -215,19 +183,19 @@ public class LinkedList<T> implements IList<T> {
 
         //判断查询的值是否为空
         if (t == null) {
-            //遍历节点，直到节点为空 或者 节点的数据域为空，退出循环
-            while (node != null && node.data != null) {
+            //遍历节点，直到节点为头结点 或者 节点的数据域为空，退出循环
+            while (node != head && node.data != null) {
                 node = node.next; //指向后继节点
                 ++pos;//计数器加一
             }
         } else {
-            //遍历节点，直到节点为空 或者 指向值为 t的 节点退出循环
-            while (node != null && !t.equals(node.data)) {
+            //遍历节点，直到节点为头结点 或者 指向值为 t的 节点退出循环
+            while (node != head && !t.equals(node.data)) {
                 node = node.next; //指向后继节点
                 ++pos;//计数器加一
             }
         }
-        return node != null ? pos : -1;
+        return node != head ? pos : -1;
     }
 
     /**
@@ -238,7 +206,7 @@ public class LinkedList<T> implements IList<T> {
         //获取第一个节点
         LNode node = head.next;
         //遍历打印
-        while (node != null) {
+        while (node != head) {
             System.out.println(node.data);
             node = node.next;
         }
