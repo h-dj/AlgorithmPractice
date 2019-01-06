@@ -1,4 +1,4 @@
-package org.hdj.AlgorithmPractice.DataStructureJavaDescribe2Edition.chapter1;
+package org.hdj.AlgorithmPractice.DataStructureJavaDescribe2Edition.ch1;
 
 /**
  * 算法设计举例

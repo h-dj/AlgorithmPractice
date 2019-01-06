@@ -14,3 +14,11 @@
 - 顺序表（Sequential List）：用顺序存储方法存储的线性表简称为顺序表（Sequential List）。
 
 4. 结点ai 的存储地址
+- 假设每个节点占用c个存储单元
+- 其中第一个单元的存储地址则是该结点的存储地址; 并设表中开始结点a1的存储地址（简称为基地址）是LOC（a1）
+- 所以结点ai的存储地址LOC（ai）： LOC（ai）= LOC（a1）+（i-1）*c   1≤i≤n
+
+![image](https://note.youdao.com/favicon.ico)
+
+- 注意： 这种存储结构称为随机存储结构，时间复杂度为O(1)
+
