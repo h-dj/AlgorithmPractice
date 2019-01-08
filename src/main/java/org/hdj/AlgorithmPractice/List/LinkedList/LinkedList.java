@@ -11,11 +11,11 @@ import org.hdj.AlgorithmPractice.List.IList;
 public class LinkedList<T> implements IList<T> {
 
     //链表的头指针
-    public LNode head;
+    public LNode<T> head;
 
     public LinkedList() {
         //初始化带头结点的单链表
-        this.head = new LNode();
+        this.head = new LNode<T>();
     }
 
     /**

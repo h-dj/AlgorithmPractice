@@ -1,6 +1,5 @@
-package org.hdj.AlgorithmPractice.DataStructureJavaDescribe2Edition.ch2;
+package org.hdj.AlgorithmPractice.DSJD2E.ch2;
 
-import org.hdj.AlgorithmPractice.Lcs;
 import org.hdj.AlgorithmPractice.List.LinkedList.LNode;
 import org.hdj.AlgorithmPractice.List.LinkedList.LinkedList;
 

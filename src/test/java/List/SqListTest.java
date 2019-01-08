@@ -1,3 +1,5 @@
+package List;
+
 import org.hdj.AlgorithmPractice.List.SequentialList.SqList;
 import org.junit.Before;
 import org.junit.Test;

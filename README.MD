@@ -1,14 +1,8 @@
-## 算法学习
-
-### 算法复杂度计算
+## 算法学习笔记
 
 1. [时间复杂度](/src/main/resources/TimeComplexity.md)
 
-###  动态规划问题
+2. 线性表的学习
 
-1. [矩阵取数](src/main/java/org/hdj/AlgorithmPractice/DynamicProgramming/Demo1.java)
-
-2. [最大子序列1](src/main/java/org/hdj/AlgorithmPractice/DynamicProgramming/Demo2.java)
-
-
+3. 栈的学习
 
