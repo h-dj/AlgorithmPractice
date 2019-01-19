@@ -1,4 +1,4 @@
-package stack;
+package org.hdj.AlgorithmPractice.stack;
 
 import org.hdj.AlgorithmPractice.Stack.SqStack.SqStack;
 import org.junit.Before;

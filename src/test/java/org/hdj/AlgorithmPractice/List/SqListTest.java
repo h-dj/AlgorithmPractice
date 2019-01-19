@@ -1,4 +1,4 @@
-package List;
+package org.hdj.AlgorithmPractice.List;
 
 import org.hdj.AlgorithmPractice.List.SequentialList.SqList;
 import org.junit.Before;

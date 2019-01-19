@@ -9,16 +9,16 @@ public class LinkQueue<T> implements IQueue<T> {
     /**
      * 队头指针
      */
-    private LNode<T> front;
+    protected LNode<T> front;
     /**
      * 队尾指针
      */
-    private LNode<T> rear;
+    protected LNode<T> rear;
 
     /**
      * 链表队列长度
      */
-    private int length;
+    protected int length;
 
     public LinkQueue() {
         front = rear = null;
@@ -45,7 +45,7 @@ public class LinkQueue<T> implements IQueue<T> {
 
     @Override
     public boolean isEmpty() {
-        return front == null;
+        return length == 0;
     }
 
     @Override
@@ -104,6 +104,10 @@ public class LinkQueue<T> implements IQueue<T> {
         //置空指针引用
         head.next = null;
         if (head == rear) rear = null;
+
+        //长度减一
+        --length;
+
         //返回数据
         return head.data;
     }
