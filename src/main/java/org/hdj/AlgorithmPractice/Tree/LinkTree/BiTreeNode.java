@@ -21,4 +21,11 @@ public class BiTreeNode<T> {
         this.LChild = LChild;
         this.RChild = RChild;
     }
+
+    @Override
+    public String toString() {
+        return "BiTreeNode{" +
+                "data=" + data +
+                '}';
+    }
 }

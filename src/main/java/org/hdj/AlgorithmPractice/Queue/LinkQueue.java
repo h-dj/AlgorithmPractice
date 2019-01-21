@@ -37,7 +37,6 @@ public class LinkQueue<T> implements IQueue<T> {
             LNode<T> temp = this.front;
             temp.data = null;
             temp.next = null;
-            temp = null;
             this.front = this.front.next;
         }
         front = rear = null;
@@ -87,6 +86,8 @@ public class LinkQueue<T> implements IQueue<T> {
             rear = node;
         }
 
+        //长度加一
+        ++length;
     }
 
     /***
