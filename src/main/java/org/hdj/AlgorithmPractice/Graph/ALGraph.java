@@ -244,4 +244,5 @@ public class ALGraph<T> implements IGraph<T> {
     public VNode<T>[] getVexs() {
         return vexs;
     }
+
 }

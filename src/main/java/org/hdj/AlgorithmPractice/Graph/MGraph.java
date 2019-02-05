@@ -137,7 +137,7 @@ public class MGraph<T> implements IGraph<T> {
      */
     @Override
     public T getVex(int vIndex) {
-        return null;
+        return (T) vexs[vIndex];
     }
 
     /**
