@@ -11,8 +11,8 @@ import org.hdj.AlgorithmPractice.Graph.MGraph;
  */
 public class ShortestPath_FLOYD {
 
-    private boolean[][][] P;
-    private int[][] D;
+    public boolean[][][] P;
+    public int[][] D;
     public final static int INFINITY = Integer.MAX_VALUE;
 
     public void FLOYD(MGraph G) {
@@ -39,7 +39,7 @@ public class ShortestPath_FLOYD {
         for (int i = 0; i < vexNum; i++) {
             for (int j = 0; j < vexNum; j++) {
                 for (int k = 0; k < vexNum; k++) {
-                    if (D[j][k] < INFINITY && D[i][k] < INFINITY && D[j][i] + D[i][k] < D[i][k]) {
+                    if (D[j][i] < INFINITY && D[i][k] < INFINITY && (D[j][i] + D[i][k] < D[j][k])) {
                         D[j][k] = D[j][i] + D[i][k];
 
                         for (int l = 0; l < vexNum; l++) {
