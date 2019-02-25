@@ -1,8 +1,9 @@
 package org.hdj.AlgorithmPractice.DSJD2E.ch6;
 
-import org.hdj.AlgorithmPractice.Graph.GraphKind;
-import org.hdj.AlgorithmPractice.Graph.MGraph;
-import org.hdj.AlgorithmPractice.Graph.utils.MiniSpanTreePrim;
+
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.GraphKind;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.MGraph;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.utils.MiniSpanTreePrim;
 
 /**
  * @Auther: h_dj

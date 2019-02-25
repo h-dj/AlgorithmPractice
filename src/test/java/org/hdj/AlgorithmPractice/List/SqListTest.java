@@ -1,6 +1,6 @@
 package org.hdj.AlgorithmPractice.List;
 
-import org.hdj.AlgorithmPractice.List.SequentialList.SqList;
+import org.hdj.AlgorithmPractice.DSJD2E.List.SequentialList.SqList;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ import org.junit.Test;
  */
 public class SqListTest {
 
-    private  SqList<Integer> sqList=new SqList<>(10);
+    private SqList<Integer> sqList=new SqList<>(10);
     @Before
     public void init(){
         sqList.insert(1);

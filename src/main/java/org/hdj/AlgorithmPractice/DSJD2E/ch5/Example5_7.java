@@ -1,7 +1,8 @@
 package org.hdj.AlgorithmPractice.DSJD2E.ch5;
 
-import org.hdj.AlgorithmPractice.Tree.LinkTree.BiTreeNode;
-import org.hdj.AlgorithmPractice.Tree.LinkTree.LinkBiTree;
+
+import org.hdj.AlgorithmPractice.DSJD2E.Tree.LinkTree.BiTreeNode;
+import org.hdj.AlgorithmPractice.DSJD2E.Tree.LinkTree.LinkBiTree;
 
 /**
  * 二叉树的建立

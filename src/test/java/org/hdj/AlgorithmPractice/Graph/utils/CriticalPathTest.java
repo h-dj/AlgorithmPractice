@@ -1,13 +1,13 @@
 package org.hdj.AlgorithmPractice.Graph.utils;
 
-import org.hdj.AlgorithmPractice.Graph.ALGraph;
-import org.hdj.AlgorithmPractice.Graph.ArcNode;
-import org.hdj.AlgorithmPractice.Graph.GraphKind;
-import org.hdj.AlgorithmPractice.Graph.VNode;
+
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.ALGraph;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.ArcNode;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.GraphKind;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.VNode;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.utils.CriticalPath;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @Auther: h_dj

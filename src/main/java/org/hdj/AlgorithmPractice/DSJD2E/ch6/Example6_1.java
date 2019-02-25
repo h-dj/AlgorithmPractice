@@ -1,9 +1,10 @@
 package org.hdj.AlgorithmPractice.DSJD2E.ch6;
 
-import org.hdj.AlgorithmPractice.Graph.GraphKind;
-import org.hdj.AlgorithmPractice.Graph.IGraph;
-import org.hdj.AlgorithmPractice.Graph.MGraph;
-import org.hdj.AlgorithmPractice.Queue.LinkQueue;
+
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.GraphKind;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.IGraph;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.MGraph;
+import org.hdj.AlgorithmPractice.DSJD2E.Queue.LinkQueue;
 
 /**
  * @Auther: h_dj

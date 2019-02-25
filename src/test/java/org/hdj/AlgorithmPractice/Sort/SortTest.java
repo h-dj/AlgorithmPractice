@@ -1,11 +1,13 @@
 package org.hdj.AlgorithmPractice.Sort;
 
+import org.hdj.AlgorithmPractice.DSJD2E.Sort.HeadSort;
+import org.hdj.AlgorithmPractice.DSJD2E.Sort.MergeSort;
+import org.hdj.AlgorithmPractice.DSJD2E.Sort.StraightSelectionSort;
+import org.hdj.AlgorithmPractice.DSJD2E.Sort.TreeSelectionSort;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
-
-import static org.junit.Assert.*;
 
 /**
  * @Auther: h_dj
@@ -43,6 +45,14 @@ public class SortTest {
     @Test
     public void headSort() {
         HeadSort.headSort(elements);
+
+        System.out.println(Arrays.toString(elements));
+    }
+
+    @Test
+    public void mergeSort() {
+        MergeSort mergeSort = new MergeSort();
+        mergeSort.mergeSort(elements);
 
         System.out.println(Arrays.toString(elements));
     }

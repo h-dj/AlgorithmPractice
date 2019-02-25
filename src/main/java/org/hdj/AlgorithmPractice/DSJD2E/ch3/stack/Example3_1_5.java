@@ -1,8 +1,11 @@
 package org.hdj.AlgorithmPractice.DSJD2E.ch3.stack;
 
-import org.hdj.AlgorithmPractice.Stack.SqStack.SqStack;
 
-import java.util.*;
+import org.hdj.AlgorithmPractice.DSJD2E.Stack.SqStack.SqStack;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 /**
  * 栈的应用：

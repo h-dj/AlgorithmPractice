@@ -1,6 +1,6 @@
 package org.hdj.AlgorithmPractice.List;
 
-import org.hdj.AlgorithmPractice.List.LinkedList.ReCycleLinkedList;
+import org.hdj.AlgorithmPractice.DSJD2E.List.LinkedList.ReCycleLinkedList;
 import org.junit.Before;
 import org.junit.Test;
 

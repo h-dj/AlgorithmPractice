@@ -1,10 +1,10 @@
 package org.hdj.AlgorithmPractice.Graph;
 
-import org.hdj.AlgorithmPractice.Graph.utils.ShortestPath_DIJ;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.GraphKind;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.MGraph;
+import org.hdj.AlgorithmPractice.DSJD2E.Graph.utils.ShortestPath_DIJ;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @Auther: h_dj

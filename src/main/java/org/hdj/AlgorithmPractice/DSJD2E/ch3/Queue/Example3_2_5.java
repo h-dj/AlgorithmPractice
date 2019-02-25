@@ -1,7 +1,8 @@
 package org.hdj.AlgorithmPractice.DSJD2E.ch3.Queue;
 
-import org.hdj.AlgorithmPractice.List.SequentialList.SqList;
-import org.hdj.AlgorithmPractice.Queue.LinkQueue;
+
+import org.hdj.AlgorithmPractice.DSJD2E.List.SequentialList.SqList;
+import org.hdj.AlgorithmPractice.DSJD2E.Queue.LinkQueue;
 
 /**
  * 队列的应用

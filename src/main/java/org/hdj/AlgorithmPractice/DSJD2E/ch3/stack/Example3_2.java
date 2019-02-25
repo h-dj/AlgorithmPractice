@@ -1,6 +1,7 @@
 package org.hdj.AlgorithmPractice.DSJD2E.ch3.stack;
 
-import org.hdj.AlgorithmPractice.Stack.LinkStack.LinkStack;
+
+import org.hdj.AlgorithmPractice.DSJD2E.Stack.LinkStack.LinkStack;
 
 /**
  * 栈的应用之

@@ -1,6 +1,6 @@
 package org.hdj.AlgorithmPractice.stack;
 
-import org.hdj.AlgorithmPractice.Stack.SqStack.SqStack;
+import org.hdj.AlgorithmPractice.DSJD2E.Stack.SqStack.SqStack;
 import org.junit.Before;
 import org.junit.Test;
 

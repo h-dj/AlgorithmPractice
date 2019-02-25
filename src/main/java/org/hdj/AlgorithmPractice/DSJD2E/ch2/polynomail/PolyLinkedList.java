@@ -1,7 +1,8 @@
 package org.hdj.AlgorithmPractice.DSJD2E.ch2.polynomail;
 
-import org.hdj.AlgorithmPractice.List.LinkedList.LNode;
-import org.hdj.AlgorithmPractice.List.LinkedList.LinkedList;
+
+import org.hdj.AlgorithmPractice.DSJD2E.List.LinkedList.LNode;
+import org.hdj.AlgorithmPractice.DSJD2E.List.LinkedList.LinkedList;
 
 import java.util.Scanner;
 

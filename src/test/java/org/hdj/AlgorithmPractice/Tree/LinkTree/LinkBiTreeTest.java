@@ -1,9 +1,9 @@
 package org.hdj.AlgorithmPractice.Tree.LinkTree;
 
+import org.hdj.AlgorithmPractice.DSJD2E.Tree.LinkTree.BiTreeNode;
+import org.hdj.AlgorithmPractice.DSJD2E.Tree.LinkTree.LinkBiTree;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class LinkBiTreeTest {
 

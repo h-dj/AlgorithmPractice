@@ -1,8 +1,8 @@
 package org.hdj.AlgorithmPractice.Queue;
 
+import org.hdj.AlgorithmPractice.DSJD2E.Queue.PriorityQueue;
+import org.hdj.AlgorithmPractice.DSJD2E.Queue.PriorityQueueData;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class PriorityQueueTest {
     @Test
