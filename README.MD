@@ -14,5 +14,4 @@
 7. 排序
 
 
-    
-![image](/h-dj/AlgorithmPractice/blob/master/images/2.9 节点类的结构图.png)
+![image](/images/2.9Node.png?raw=true)
