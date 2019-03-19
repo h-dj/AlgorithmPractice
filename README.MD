@@ -12,10 +12,7 @@
 5. 树与二叉树的学习
 6. 图的学习
 7. 排序
-<<<<<<< HEAD
-=======
 
 
     
-![image](/h-dj/AlgorithmPractice/blob/master/images/2.9 节点类的结构图.png)
->>>>>>> parent of cb8c110... 查找
+![image](/images/2.9 节点类的结构图.png)
