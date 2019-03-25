@@ -1,7 +1,5 @@
-package org.hdj.AlgorithmPractice.Graph;
+package org.hdj.AlgorithmPractice.DSJD2E.Graph;
 
-import org.hdj.AlgorithmPractice.DSJD2E.Graph.GraphKind;
-import org.hdj.AlgorithmPractice.DSJD2E.Graph.MGraph;
 import org.hdj.AlgorithmPractice.DSJD2E.Graph.utils.ShortestPath_DIJ;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package org.hdj.AlgorithmPractice.stack;
+package org.hdj.AlgorithmPractice.DSJD2E.stack;
 
 import org.hdj.AlgorithmPractice.DSJD2E.Stack.LinkStack.LinkStack;
 import org.junit.Before;

@@ -1,6 +1,6 @@
-package org.hdj.AlgorithmPractice.List;
+package org.hdj.AlgorithmPractice.DSJD2E.List;
 
-import org.hdj.AlgorithmPractice.DSJD2E.List.SequentialList.SqList;
+import org.hdj.AlgorithmPractice.DSJD2E.List.SqList.SqList;
 import org.junit.Before;
 import org.junit.Test;
 

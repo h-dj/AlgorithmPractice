@@ -1,9 +1,5 @@
-package org.hdj.AlgorithmPractice.Sort;
+package org.hdj.AlgorithmPractice.DSJD2E.Sort;
 
-import org.hdj.AlgorithmPractice.DSJD2E.Sort.HeadSort;
-import org.hdj.AlgorithmPractice.DSJD2E.Sort.MergeSort;
-import org.hdj.AlgorithmPractice.DSJD2E.Sort.StraightSelectionSort;
-import org.hdj.AlgorithmPractice.DSJD2E.Sort.TreeSelectionSort;
 import org.junit.Before;
 import org.junit.Test;
 

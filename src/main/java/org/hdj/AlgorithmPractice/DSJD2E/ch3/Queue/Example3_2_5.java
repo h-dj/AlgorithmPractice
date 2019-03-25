@@ -1,7 +1,7 @@
 package org.hdj.AlgorithmPractice.DSJD2E.ch3.Queue;
 
 
-import org.hdj.AlgorithmPractice.DSJD2E.List.SequentialList.SqList;
+import org.hdj.AlgorithmPractice.DSJD2E.List.SqList.SqList;
 import org.hdj.AlgorithmPractice.DSJD2E.Queue.LinkQueue;
 
 /**

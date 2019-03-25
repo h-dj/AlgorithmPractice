@@ -1,7 +1,5 @@
-package org.hdj.AlgorithmPractice.Tree.LinkTree;
+package org.hdj.AlgorithmPractice.DSJD2E.Tree.LinkTree;
 
-import org.hdj.AlgorithmPractice.DSJD2E.Tree.LinkTree.BiTreeNode;
-import org.hdj.AlgorithmPractice.DSJD2E.Tree.LinkTree.LinkBiTree;
 import org.junit.Before;
 import org.junit.Test;
 

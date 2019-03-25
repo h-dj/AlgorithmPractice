@@ -1,4 +1,4 @@
-package org.hdj.AlgorithmPractice.List;
+package org.hdj.AlgorithmPractice.DSJD2E.List;
 
 import org.hdj.AlgorithmPractice.DSJD2E.List.LinkedList.LinkedList;
 import org.junit.Before;

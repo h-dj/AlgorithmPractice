@@ -1,6 +1,5 @@
-package org.hdj.AlgorithmPractice.Search;
+package org.hdj.AlgorithmPractice.DSJD2E.Search;
 
-import org.hdj.AlgorithmPractice.DSJD2E.Search.BinarySearch;
 import org.junit.Before;
 import org.junit.Test;
 
