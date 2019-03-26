@@ -18,6 +18,7 @@ public class LinkStack<E> implements IStack<E> {
     @Override
     public void clear() {
         top = null;
+        length = 0;
     }
 
     /**
@@ -27,7 +28,7 @@ public class LinkStack<E> implements IStack<E> {
      */
     @Override
     public boolean isEmpty() {
-        return top == null;
+        return size() == 0;
     }
 
     @Override
@@ -42,10 +43,9 @@ public class LinkStack<E> implements IStack<E> {
      */
     @Override
     public E peek() {
-        if (top != null) {
-            return top.data;
-        }
-        return null;
+        if (isEmpty())
+            throw new RuntimeException("栈为空！");
+        return top.data;
     }
 
     /**
@@ -57,7 +57,7 @@ public class LinkStack<E> implements IStack<E> {
     public void push(E e) {
         //创建节点
         LNode node = new LNode(e);
-        //插入新节点到链表的头部
+        //修改栈顶指针
         node.next = top;
         top = node;
         //栈长度加一
@@ -71,14 +71,13 @@ public class LinkStack<E> implements IStack<E> {
      */
     @Override
     public E pop() {
-        //判断栈是否为空
-        if (!isEmpty()) {
-            E data = top.data;
-            top = top.next;
-            length--;
-            return data;
-        }
-        return null;
+        //获取栈顶元素
+        E pop = peek();
+        //修改栈顶指针
+        top = top.next;
+        //栈长度减一
+        length--;
+        return pop;
     }
 
     @Override

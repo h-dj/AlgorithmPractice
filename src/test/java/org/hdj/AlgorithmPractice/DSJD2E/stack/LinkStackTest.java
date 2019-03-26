@@ -24,6 +24,9 @@ public class LinkStackTest {
     public void testPop(){
         System.out.println(linkStack.size());
         Integer pop = linkStack.pop();
+         pop = linkStack.pop();
+         pop = linkStack.pop();
+         pop = linkStack.pop();
         System.out.println(pop);
 
         System.out.println(linkStack.size());

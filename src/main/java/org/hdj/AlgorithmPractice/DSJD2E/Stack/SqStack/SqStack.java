@@ -2,6 +2,8 @@ package org.hdj.AlgorithmPractice.DSJD2E.Stack.SqStack;
 
 import org.hdj.AlgorithmPractice.DSJD2E.Stack.IStack;
 
+import java.util.EmptyStackException;
+
 /**
  * 顺序栈
  */
@@ -63,10 +65,9 @@ public class SqStack<E> implements IStack<E> {
     @Override
     public E peek() {
         //判断是否为空栈
-        if (!isEmpty()) {
-            return (E) elementData[top - 1];  //返回栈顶元素
-        }
-        return null;
+        if (isEmpty())
+            throw new RuntimeException("栈为空！");
+        return (E) elementData[top - 1];  //返回栈顶元素;
     }
 
     /**
@@ -93,11 +94,10 @@ public class SqStack<E> implements IStack<E> {
     @Override
     public E pop() {
         E peek = peek();
-        if (peek != null) {
-            //置空出栈元素
-            elementData[top - 1] = null;
-            top--;
-        }
+        //置空出栈元素
+        elementData[top - 1] = null;
+        //栈顶指针减一
+        top--;
         return peek;
     }
 

@@ -1,11 +1,13 @@
 package org.hdj.AlgorithmPractice.DSJD2E.Queue;
 
 /**
- * 顺序队列的实现
+ * 顺序循环队列的实现
+ * <p>
+ * 采用少存一个单元的实现方式
  *
  * @param <T>
  */
-public class SqQueue<T> implements IQueue<T> {
+public class SqCircleQueue<T> implements IQueue<T> {
     /**
      * 队列容器
      */
@@ -20,11 +22,11 @@ public class SqQueue<T> implements IQueue<T> {
      */
     private int rear;
 
-    public SqQueue() {
+    public SqCircleQueue() {
         this(10);
     }
 
-    public SqQueue(int initCapacity) {
+    public SqCircleQueue(int initCapacity) {
         queues = new Object[initCapacity];
     }
 
@@ -116,8 +118,10 @@ public class SqQueue<T> implements IQueue<T> {
     @Override
     public void display() {
         if (!isEmpty()) {
-            for (Object queue : queues) {
-                System.out.println(queue.toString());
+            int index = front;
+            while (index != rear) {
+                System.out.println(this.queues[index]);
+                index = (index + 1) % this.queues.length;
             }
         }
     }

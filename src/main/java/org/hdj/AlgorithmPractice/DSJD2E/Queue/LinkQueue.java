@@ -22,6 +22,7 @@ public class LinkQueue<T> implements IQueue<T> {
 
     public LinkQueue() {
         front = rear = null;
+        this.length = 0;
     }
 
     /**
@@ -40,11 +41,13 @@ public class LinkQueue<T> implements IQueue<T> {
             this.front = this.front.next;
         }
         front = rear = null;
+
+        this.length = 0;
     }
 
     @Override
     public boolean isEmpty() {
-        return length == 0;
+        return size() == 0;
     }
 
     @Override
@@ -96,21 +99,15 @@ public class LinkQueue<T> implements IQueue<T> {
      */
     @Override
     public T poll() {
-        //判断是否为空队列
-        if (isEmpty()) throw new RuntimeException("队列为空！");
-        //获取队头节点
-        LNode<T> head = this.front;
-        //头指针指向队头节点的指针指向的节点
-        this.front = head.next;
-        //置空指针引用
-        head.next = null;
-        if (head == rear) rear = null;
-
+        //获取队首元素
+        T poll = peek();
+        //修改队首指针
+        this.front = this.front.next;
         //长度减一
         --length;
 
         //返回数据
-        return head.data;
+        return poll;
     }
 
     /**
