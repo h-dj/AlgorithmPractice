@@ -9,7 +9,7 @@ import org.hdj.AlgorithmPractice.DSJD2E.Stack.LinkStack.LinkStack;
 public class LinkBiTree<T> {
 
     //根结点
-    public BiTreeNode<T> root;
+    private BiTreeNode<T> root;
 
     public LinkBiTree() {
         this.root = new BiTreeNode<>();
@@ -63,10 +63,26 @@ public class LinkBiTree<T> {
                     break;
                 }
             }
+            //创建根结点
             root = new BiTreeNode(r);
             root.LChild = new LinkBiTree(preOrder, inOrder, preIndex + 1, inIndex, i).root;
             root.RChild = new LinkBiTree(preOrder, inOrder, preIndex + i + 1, inIndex + i + 1, count - i - 1).root;
 
+        }
+    }
+
+    /**
+     * 使用完全二叉树的顺序存储结构建立二叉链式存储结构
+     *
+     * @param sqBiTree 序列
+     * @param index    根结点标识
+     */
+    public LinkBiTree(String sqBiTree, int index) {
+        if (index < sqBiTree.length()) {
+            root = new BiTreeNode(sqBiTree.charAt(index));
+            //建立左右子树
+            root.LChild = new LinkBiTree(sqBiTree, 2 * index + 1).root;
+            root.RChild = new LinkBiTree(sqBiTree, 2 * index + 2).root;
         }
     }
 
