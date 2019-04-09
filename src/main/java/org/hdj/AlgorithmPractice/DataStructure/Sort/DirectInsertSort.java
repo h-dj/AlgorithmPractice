@@ -6,9 +6,9 @@ import java.util.Random;
 /**
  * @Auther: h_dj
  * @Date: 2019/2/9 22:56
- * @Description: 插入排序
+ * @Description: 直接插入排序
  */
-public class InsertSort {
+public class DirectInsertSort {
 
     /**
      * 没有设置哨兵的插入排序
@@ -31,6 +31,7 @@ public class InsertSort {
 
     /**
      * 插入算法改进
+     * 需要预留数组第一个充当哨兵
      */
     public void sortWithGuard(int[] elements) {
         int i, j;
@@ -46,24 +47,5 @@ public class InsertSort {
             elements[j + 1] = elements[0];
 
         }
-    }
-
-    public static void main(String[] args) {
-        InsertSort sort = new InsertSort();
-
-        int[] arr = new int[10];
-
-        for (int i = 1; i < 10; i++) {
-            arr[i] = new Random().nextInt(100);
-        }
-
-        long start = System.currentTimeMillis();
-       // shellSort.sortNoGuard(arr);//113.888
-          sort.sortWithGuard(arr);//116.891
-        long end = System.currentTimeMillis();
-        System.out.println((end - start) / 1000.0);
-       System.out.println(Arrays.toString(arr));
-
-
     }
 }

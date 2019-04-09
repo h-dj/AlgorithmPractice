@@ -1,7 +1,5 @@
 package org.hdj.AlgorithmPractice.DataStructure.Sort;
 
-import java.util.Arrays;
-
 /**
  * @Auther: h_dj
  * @Date: 2019/2/12 10:54
@@ -41,7 +39,7 @@ public class QuickSort {
                 j--;
             }
         }
-        //支点记录到位
+        //支点记录交换
         elements[i] = pivot;
         //返回支点下标
         return i;
@@ -64,12 +62,4 @@ public class QuickSort {
         }
     }
 
-    public static void main(String[] args) {
-        int[] elements = {1, 4, 2, 3, 5, 6};
-
-        qSort(elements, 0, elements.length - 1);
-
-        System.out.println(Arrays.toString(elements));
-
-    }
 }

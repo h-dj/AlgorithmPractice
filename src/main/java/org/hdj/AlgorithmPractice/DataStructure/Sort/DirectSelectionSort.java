@@ -5,7 +5,7 @@ package org.hdj.AlgorithmPractice.DataStructure.Sort;
  * @Date: 2019/2/13 16:33
  * @Description: 直接选择排序
  */
-public class StraightSelectionSort {
+public class DirectSelectionSort {
 
 
     /**

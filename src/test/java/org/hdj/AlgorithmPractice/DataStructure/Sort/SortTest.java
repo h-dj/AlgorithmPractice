@@ -23,7 +23,7 @@ public class SortTest {
 
     @Test
     public void straightSelectionSortTest() {
-        StraightSelectionSort.straightSelectionSort(elements);
+        DirectSelectionSort.straightSelectionSort(elements);
 
         System.out.println(Arrays.toString(elements));
     }
