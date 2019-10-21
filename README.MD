@@ -27,6 +27,11 @@
 
 ##### 三、算法练习
 1.  [两个数相加](./src/main/java/org/hdj/AlgorithmPractice/Practice/TwoSum.java)
+
+
+##### 四、剑指offer
+1. [重复数字在数组中](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/DuplicationInArray.java)
+
 ###### 推荐练习网站
 1. leetCode 
 2. 51Nod

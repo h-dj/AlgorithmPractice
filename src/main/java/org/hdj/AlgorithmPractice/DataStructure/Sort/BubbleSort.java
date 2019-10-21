@@ -1,5 +1,7 @@
 package org.hdj.AlgorithmPractice.DataStructure.Sort;
 
+import java.util.Comparator;
+
 /**
  * @Auther: h_dj
  * @Date: 2019/2/12 10:30
@@ -15,7 +17,7 @@ public class BubbleSort {
      *
      * @param elements
      */
-    public void sort(int[] elements) {
+    public static void sort(int[] elements) {
 
         //标识序列是否发生交换
         boolean swap_flag = true;
@@ -33,4 +35,52 @@ public class BubbleSort {
             }
         }
     }
+
+
+    //排序器
+    public interface Sortor {
+
+        //排序实现了comparable接口的对象数据
+        public <T extends Comparable<T>> void sort(T[] list);
+
+        //通过传入的比较器Comparator对数组进行排序
+        public <T> void sort(T[] list, Comparator<T> comparator);
+    }
+
+    public class BasicBubbleSortor implements Sortor {
+
+        @Override
+        public <T extends Comparable<T>> void sort(T[] list) {
+            boolean swapped = true;
+            for (int i = 1, len = list.length; i < len && swapped; ++i) {
+                swapped = false;
+                for (int j = 0; j < len - i; ++j) {
+                    if (list[j].compareTo(list[j + 1]) > 0) {
+                        T temp = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            }
+        }
+
+        @Override
+        public <T> void sort(T[] list, Comparator<T> comparator) {
+            boolean swapped = true;
+            for (int i = 1, len = list.length; i < len && swapped; ++i) {
+                swapped = false;
+                for (int j = 0; j < len - i; ++j) {
+                    if (comparator.compare(list[j], list[j + 1]) > 0) {
+                        T temp = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            }
+        }
+    }
+
+
 }
