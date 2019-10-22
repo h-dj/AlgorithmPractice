@@ -22,12 +22,6 @@ public class DuplicationInArrayTest {
             System.out.println(Arrays.toString(duplications));
         }
 
-
-        int[] n = {2, 3, 5, 6, 3, 2, 6, 7};
-        dubplication = DuplicationInArray.findDuplicationNoEdit(n, n.length, duplications);
-        if (dubplication) {
-            System.out.println(Arrays.toString(duplications));
-        }
     }
 
     @Test
