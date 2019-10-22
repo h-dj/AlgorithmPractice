@@ -14,6 +14,9 @@ package org.hdj.AlgorithmPractice.SwordOffer;
  * <p>
  * 注意题目中的 长度n+1的数组里所有数字都在1~n范围内，
  * <p>
+ * <p>
+ * 时间复杂度：O(nlogn)
+ * 空间复制度:O(1)
  */
 public class DuplicationInArrayNotEdit {
 
@@ -59,8 +62,8 @@ public class DuplicationInArrayNotEdit {
         int count = 0;
         for (int i = 0; i < length; i++) {
             //查看数组中，在范围start～end 中，数组数字出现的次数
-            //如：数组：{2, 3, 1, 0, 2, 5, 3}；范围：1~3(3次)
-            //数组数字在1~3范围的有2,3,1,0,2,3,计算了6次，那么在范围1~3内肯定有重复
+            //如：数组：{2,3,5,4,3,2,6,7}；范围：1~3(3次)
+            //数组数字在1~3范围的有2,3,3,2,计算了4次，那么在范围1~3内肯定有重复
             //但是也有例外：如数组{1,1,3,4,5,6}，　范围1~3中
             //如果数字出现次数和范围相同，则不能判断是否有重复值
             if (numbers[i] >= start && numbers[i] <= end) {
@@ -73,7 +76,7 @@ public class DuplicationInArrayNotEdit {
 
     public static void main(String[] args) {
 //        int[] numbers = {2, 3, 1, 0, 2, 5, 3};
-        int[] numbers = {1,1,3,4,5,6};
+        int[] numbers = {1, 1, 3, 4, 5, 6};
         int length = numbers.length;
         int duplication = getDuplication(numbers, length);
         System.out.println(duplication);

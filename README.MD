@@ -26,14 +26,19 @@
 2. 动态规划
 
 ##### 三、算法练习
+
+> leetCode
 1.  [两个数相加](./src/main/java/org/hdj/AlgorithmPractice/Practice/TwoSum.java)
 
 
-##### 四、剑指offer
+> 剑指offer
+
 1. [重复数字在数组中](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/DuplicationInArray.java)
+2. [在不修改数组找出重复的数字](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/DuplicationInArrayNotEdit.java)
+3. [替换空格](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/ReplaceBlank.java)
+4.　[合并有序数组(替换空格的变换)](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/MergeSortArray.java)
 
 ###### 推荐练习网站
 1. leetCode 
 2. 51Nod
-
-详细介绍请查看 [h_dj's 简书](https://www.jianshu.com/nb/35169221)
+3.　牛客网
