@@ -37,6 +37,7 @@
 2. [在不修改数组找出重复的数字](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/DuplicationInArrayNotEdit.java)
 3. [替换空格](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/ReplaceBlank.java)
 4.　[合并有序数组(替换空格的变换)](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/MergeSortArray.java)
+5.　[反向打印链表](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/PrintListInRevesedOrder.java)
 
 ###### 推荐练习网站
 1. leetCode 

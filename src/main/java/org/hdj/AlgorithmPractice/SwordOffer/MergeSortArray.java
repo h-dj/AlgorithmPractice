@@ -47,7 +47,7 @@ public class MergeSortArray {
         int pos = mergeLen - 1;
 
         //比较两数组
-        while (a2Pos >= 0) {
+        while (a2Pos >= 0 && a1Pos >= 0) {
             if (A1[a1Pos] >= A2[a2Pos]) {
                 A1[pos--] = A1[a1Pos--];
             } else {
@@ -58,7 +58,7 @@ public class MergeSortArray {
 
     public static void main(String[] args) {
         int[] A1 = {1, 3, 4, 9, 10, 25, 0, 0, 0, 0, 0};
-        int[] A2 = {5, 8, 13};
+        int[] A2 = {2, 88, 99};
 
         mergeSortArray(A1, A2);
 
