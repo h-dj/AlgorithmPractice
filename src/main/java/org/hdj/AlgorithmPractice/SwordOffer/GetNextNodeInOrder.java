@@ -10,7 +10,7 @@ public class GetNextNodeInOrder {
 
     class TreeLinkNode {
         String value;
-        TreeLinkNode p;
+        TreeLinkNode next;
         TreeLinkNode left;
         TreeLinkNode right;
 
@@ -35,28 +35,32 @@ public class GetNextNodeInOrder {
             return null;
         }
 
-        TreeLinkNode next = null;
+        //1.有右子树
         if (pNode.right != null) {
-            next = pNode.right;
+            TreeLinkNode next = pNode.right;
             while (next.left != null) {
                 next = next.left;
             }
             return next;
         }
 
-        TreeLinkNode p = pNode.p;
-        if (p != null && pNode == p.left) {
-            return p;
-        }
 
-        if (p != null && p.right == pNode) {
-            next = p;
-            while (next != null && next.p != null && next == next.p.right) {
-                next = p.p;
+        TreeLinkNode p = pNode.next;
+        if (p != null) {
+
+            //2. 没有右子树，为左节点
+            if (pNode == p.left) {
+                return p;
             }
 
-            if (next != null) {
-                return next.p;
+            //3.　没有右子树，为右节点
+            TreeLinkNode c = pNode;
+            if (p.right == c) {
+                while (p != null && c == p.right) {
+                    c = p;
+                    p = p.next;
+                }
+                return p;
             }
         }
         return null;
@@ -94,24 +98,24 @@ public class GetNextNodeInOrder {
         a.left = b;
         a.right = c;
 
-        b.p = a;
+        b.next = a;
         b.left = d;
         b.right = e;
 
-        d.p = b;
+        d.next = b;
 
-        e.p = b;
+        e.next = b;
         e.right = i;
         e.left = h;
-        i.p = e;
-        h.p = e;
+        i.next = e;
+        h.next = e;
 
-        c.p = a;
+        c.next = a;
         c.left = f;
         c.right = g;
 
-        f.p = c;
-        g.p = c;
+        f.next = c;
+        g.next = c;
 
         //打印中序序列
         printInOrder(a);
