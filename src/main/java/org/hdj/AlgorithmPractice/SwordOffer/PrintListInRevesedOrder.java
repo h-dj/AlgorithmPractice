@@ -1,5 +1,6 @@
 package org.hdj.AlgorithmPractice.SwordOffer;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 /**
@@ -13,18 +14,21 @@ public class PrintListInRevesedOrder {
     /**
      * 头结点
      */
-    private Node head;
+    private ListNode head;
 
     public PrintListInRevesedOrder() {
-        this.head = new Node(null, null);
+        this.head = new ListNode(-1, null);
     }
 
-    private class Node {
-        Integer data;
-        Node next;
+    public class ListNode {
+        int data;
+        ListNode next = null;
 
+        ListNode(int val) {
+            this.data = val;
+        }
 
-        public Node(Integer data, Node next) {
+        public ListNode(int data, ListNode next) {
             this.data = data;
             this.next = next;
         }
@@ -38,8 +42,8 @@ public class PrintListInRevesedOrder {
             throw new IllegalArgumentException();
         }
         //新建节点
-        Node newNode = new Node(data, null);
-        Node tail = head.next;
+        ListNode newNode = new ListNode(data, null);
+        ListNode tail = head.next;
         if (tail != null) {
             while (tail.next != null) {
                 tail = tail.next;
@@ -61,12 +65,12 @@ public class PrintListInRevesedOrder {
         }
 
         //新建节点
-        Node newNode = new Node(data, null);
+        ListNode newNode = new ListNode(data, null);
 
         if (head.next == null) {
             head.next = newNode;
         } else {
-            Node temp = head.next;
+            ListNode temp = head.next;
             newNode.next = temp;
             head.next = newNode;
         }
@@ -74,7 +78,7 @@ public class PrintListInRevesedOrder {
 
 
     public void display() {
-        Node next = head.next;
+        ListNode next = head.next;
         while (next != null) {
             System.out.print(next.data + " ");
             next = next.next;
@@ -87,7 +91,7 @@ public class PrintListInRevesedOrder {
      *
      * @param head
      */
-    public void printLinkedListRecursive(Node head) {
+    public void printLinkedListRecursive(ListNode head) {
         //判断参数
         if (head == null) {
             return;
@@ -96,15 +100,30 @@ public class PrintListInRevesedOrder {
         if (head.next != null) {
             printLinkedListRecursive(head.next);
         }
-        if (head.data != null) {
+        if (head.data != -1) {
             System.out.print(head.data + " ");
         }
+    }
+
+    public ArrayList<Integer> printLinkedListRecursive2(ListNode head) {
+        ArrayList<Integer> list = new ArrayList<>();
+        //判断参数
+        if (head == null) {
+            return list;
+        }
+        //如果尾节点不为空，则先访问尾节点
+        if (head.next != null) {
+            ArrayList<Integer>  temp = printLinkedListRecursive2(head.next);
+            list.addAll(temp);
+        }
+        list.add(head.data);
+        return list;
     }
 
     /**
      * 方法2 :利用栈和循环实现递归翻转打印链表
      */
-    public void printLinkedListStack(Node head) {
+    public void printLinkedListStack(ListNode head) {
         //判断参数
         if (head == null) {
             return;
@@ -112,7 +131,7 @@ public class PrintListInRevesedOrder {
 
         //入栈
         Stack<Integer> stack = new Stack<>();
-        Node next = head.next;
+        ListNode next = head.next;
         while (next != null) {
             stack.push(next.data);
             next = next.next;
@@ -123,38 +142,36 @@ public class PrintListInRevesedOrder {
         }
     }
 
-    /**
-     * 重新构造新的链表，以便从头遍历
-     *
-     * @param head
-     */
-    public void printLinkedListByCreate(Node head) {
+
+    public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+        ArrayList<Integer> list = new ArrayList<>();
         //判断参数
-        if (head == null) {
-            return;
+        if (listNode == null) {
+            return list;
         }
 
-        Node next = head.next;
+        ListNode next = listNode;
 
-        Node newHead = null;
+        ListNode newHead = null;
         while (next != null) {
-            Node newNode = new Node(next.data, null);
+            ListNode newNode = new ListNode(next.data);
             if (newHead == null) {
-                newHead = new Node(null, newNode);
+                newHead = new ListNode(-1);
+                newHead.next = newNode;
             } else {
-                Node temp = newHead.next;
+                ListNode temp = newHead.next;
                 newNode.next = temp;
                 newHead.next = newNode;
             }
             next = next.next;
         }
-        Node n = newHead.next;
+        ListNode n = newHead.next;
         while (n != null) {
-            System.out.print(n.data + " ");
+            list.add(n.data);
             n = n.next;
         }
+        return list;
     }
-
 
     public static void main(String[] args) {
         PrintListInRevesedOrder p = new PrintListInRevesedOrder();
@@ -171,10 +188,24 @@ public class PrintListInRevesedOrder {
 
         p.printLinkedListStack(p.head);
 
-        System.out.println();
-        p.printLinkedListByCreate(p.head);
+
+        System.out.println("\n+    ");
+
+        ArrayList<Integer> integers1 = p.printLinkedListRecursive2(p.head.next);
+
+        for (Integer integer : integers1) {
+            System.out.print(" i="+integer);
+        }
+
+        System.out.println("\n+    ");
+
+        ArrayList<Integer> integers = p.printListFromTailToHead(p.head.next);
+        integers.forEach(System.out::print);
+
 
         System.out.println();
         p.display();
+
+
     }
 }

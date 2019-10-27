@@ -38,6 +38,9 @@
 3. [替换空格](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/ReplaceBlank.java)
 4.　[合并有序数组(替换空格的变换)](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/MergeSortArray.java)
 5.　[反向打印链表](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/PrintListInRevesedOrder.java)
+6. [重建二叉树](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/CreateBinaryTreeByOrder.java)
+7. [在二叉树中指定某个节点，获取中序遍历的下一个节点](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/GetNextNodeInOrder.java)
+8. [两个栈来实现一个队列](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/TwoStackMockQueue.java)
 
 ###### 推荐练习网站
 1. leetCode 
