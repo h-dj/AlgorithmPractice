@@ -1,4 +1,4 @@
-package org.hdj.AlgorithmPractice.Practice;
+package org.hdj.AlgorithmPractice.LeetCode;
 
 
 import java.util.Arrays;

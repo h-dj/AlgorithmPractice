@@ -28,7 +28,7 @@
 ##### 三、算法练习
 
 > leetCode
-1.  [两个数相加](./src/main/java/org/hdj/AlgorithmPractice/Practice/TwoSum.java)
+1.  [两个数相加](src/main/java/org/hdj/AlgorithmPractice/LeetCode/TwoSum.java)
 
 
 > 剑指offer
