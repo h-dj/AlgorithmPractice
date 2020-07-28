@@ -1,7 +1,5 @@
 package org.hdj.AlgorithmPractice.LeetCode.algorith;
 
-import java.util.Arrays;
-
 /**
  * @author hdj
  * @version 1.0
@@ -34,7 +32,7 @@ public class IsSubSequence_392 {
 
 
     public static void main(String[] args) {
-        String s = "abc";
+        String s = "c";
         String t = "ahbgdc";
         System.out.println(isSubsequence(s, t));
         System.out.println(isSubsequence_indexOf(s, t));
@@ -132,53 +130,61 @@ public class IsSubSequence_392 {
     }
 
     /**
-     * 动态规划
-     * 状态:
-     * 令 f[i][j] 表示字符串 t 中从位置 i 开始往后字符 j 第一次出现的位置。
-     * 状态转移方程：
-     * f[i][j] = i,  t[i] = j
-     * f[i][j] = f[i+1][j],  t[i] != j
+     * 动态规划，判断s是否是t 的子串
+     * <p>
+     * 状态： f[i][j] 字符串t中　字符x在字符串t中的位置
+     * 状态转移方程:
+     * 0 <= i <= t.length()
+     * 0 <= j < 26
+     * f[i][j] = t.length()   i == t.length
+     * f[i][j] = i            t.charAt(i) == j - 'a'
+     * f[i][j] = f[i+1][j]    t.charAt(i) != j - 'a'
+     *
+     * @param s
+     * @param t
+     * @return
      */
     public static boolean isSubsequence3(String s, String t) {
         if (s == null || t == null || s.length() > t.length()) {
             return false;
         }
-        if (s.length() == 0) {
+        if (s.isEmpty()) {
             return true;
         }
-        int n = s.length(), m = t.length();
-        int[][] f = new int[m + 1][26];
+        int sLen = s.length(), tLen = t.length();
+        //记录每个字母在字符串t出现的下标位置
+        int[][] f = new int[tLen + 1][26];
+        //初始化数组
         for (int i = 0; i < 26; i++) {
-            f[m][i] = m;
+            f[tLen][i] = tLen;
         }
-        Arrays.stream(f)
-                .forEach(ints -> System.out.println(Arrays.toString(ints)));
-        System.out.println();
-        for (int i = m - 1; i >= 0; i--) {
-            for (int j = 0; j < 26; j++) {
-                if (t.charAt(i) == j + 'a')
-                    f[i][j] = i;
-                else
-                    f[i][j] = f[i + 1][j];
 
-                Arrays.stream(f)
-                        .forEach(ints -> System.out.println(Arrays.toString(ints)));
-                System.out.println();
+        for (int i = tLen - 1; i >= 0; i--) {
+            for (int j = 0; j < 26; j++) {
+                //如果字符j - 'a'在字符串t中出现，则记录出现的下标
+                if (t.charAt(i) == j + 'a') {
+                    f[i][j] = i;
+                } else {
+                    //否则记录上一次字符出现的位置下标
+                    f[i][j] = f[i + 1][j];
+                }
             }
         }
-        Arrays.stream(f)
-                .forEach(ints -> System.out.println(Arrays.toString(ints)));
-
-        int add = 0;
-        for (int i = 0; i < n; i++) {
+        int aa = 0;
+        //从记录好的表中查询s 是否是t的子串
+        for (int i = 0; i < sLen; i++) {
+            //获取字符
             char c = s.charAt(i);
-            int ca = c - 'a';
-            int temp = f[add][ca];
-
-            if (temp == m) {
+            //得到26个字符中的那个
+            int cIndex = c - 'a';
+            //获取该字符是否存在t中
+            int temp = f[aa][cIndex];
+            //等于t的长度，则不存在
+            if (temp == tLen) {
                 return false;
             }
-            add = temp + 1;
+            //t字符串下一个字符
+            aa = temp + 1;
         }
         return true;
     }
