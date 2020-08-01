@@ -46,6 +46,8 @@
 7. [在二叉树中指定某个节点，获取中序遍历的下一个节点](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/GetNextNodeInOrder.java)
 8. [两个栈来实现一个队列](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/TwoStackMockQueue.java)
 9. [斐波那契数列](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/Fibonacci.java)
+10. [翻转链表--很有意思](./src/main/java/org/hdj/AlgorithmPractice/SwordOffer/ReversePrint_06.java)
+
 
 ###### 推荐练习网站
 
