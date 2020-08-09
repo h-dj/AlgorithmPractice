@@ -1,6 +1,5 @@
 package org.hdj.AlgorithmPractice.SwordOffer;
 
-import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -14,33 +13,6 @@ import java.util.Stack;
  * 3. 双指针
  */
 public class ReversePrint_06 {
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
-    public static ListNode genNode(int start, int length) {
-        ListNode h = new ListNode(start);
-        if (start == length) {
-            return h;
-        }
-        h.next = genNode(start + 1, length);
-        return h;
-    }
-
-    public static void display(ListNode h) {
-        ListNode next = h;
-        while (next != null) {
-            System.out.print(next.val + " ");
-            next = next.next;
-        }
-        System.out.println();
-    }
 
     /**
      * 利用栈(会导致扩容，进行数组拷贝)
@@ -166,14 +138,14 @@ public class ReversePrint_06 {
 //        System.out.println(Arrays.toString(ints));
 
 
-        display(genNode(1, 6));
-        ListNode reverse = reverse(genNode(1, 6));
-        display(reverse);
+        Utils.display(Utils.genNode(1, 6));
+        ListNode reverse = reverse(Utils.genNode(1, 6));
+        Utils.display(reverse);
 
-        reverse = reverse2(genNode(1, 6));
-        display(reverse);
+        reverse = reverse2(Utils.genNode(1, 6));
+        Utils.display(reverse);
 
-        reverse = reverse3(genNode(1, 6));
-        display(reverse);
+        reverse = reverse3(Utils.genNode(1, 6));
+        Utils.display(reverse);
     }
 }

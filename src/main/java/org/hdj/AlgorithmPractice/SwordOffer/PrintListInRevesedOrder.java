@@ -3,6 +3,7 @@ package org.hdj.AlgorithmPractice.SwordOffer;
 import java.util.ArrayList;
 import java.util.Stack;
 
+
 /**
  * @author hdj
  * @version 1.0
@@ -20,19 +21,6 @@ public class PrintListInRevesedOrder {
         this.head = new ListNode(-1, null);
     }
 
-    public class ListNode {
-        int data;
-        ListNode next = null;
-
-        ListNode(int val) {
-            this.data = val;
-        }
-
-        public ListNode(int data, ListNode next) {
-            this.data = data;
-            this.next = next;
-        }
-    }
 
     /**
      * 使用尾插法，创建链表
@@ -77,10 +65,10 @@ public class PrintListInRevesedOrder {
     }
 
 
-    public void display() {
+    public void display(ListNode head) {
         ListNode next = head.next;
         while (next != null) {
-            System.out.print(next.data + " ");
+            System.out.print(next.val + " ");
             next = next.next;
         }
     }
@@ -100,8 +88,8 @@ public class PrintListInRevesedOrder {
         if (head.next != null) {
             printLinkedListRecursive(head.next);
         }
-        if (head.data != -1) {
-            System.out.print(head.data + " ");
+        if (head.val != -1) {
+            System.out.print(head.val + " ");
         }
     }
 
@@ -113,10 +101,10 @@ public class PrintListInRevesedOrder {
         }
         //如果尾节点不为空，则先访问尾节点
         if (head.next != null) {
-            ArrayList<Integer>  temp = printLinkedListRecursive2(head.next);
+            ArrayList<Integer> temp = printLinkedListRecursive2(head.next);
             list.addAll(temp);
         }
-        list.add(head.data);
+        list.add(head.val);
         return list;
     }
 
@@ -133,7 +121,7 @@ public class PrintListInRevesedOrder {
         Stack<Integer> stack = new Stack<>();
         ListNode next = head.next;
         while (next != null) {
-            stack.push(next.data);
+            stack.push(next.val);
             next = next.next;
         }
         //出栈
@@ -154,7 +142,7 @@ public class PrintListInRevesedOrder {
 
         ListNode newHead = null;
         while (next != null) {
-            ListNode newNode = new ListNode(next.data);
+            ListNode newNode = new ListNode(next.val);
             if (newHead == null) {
                 newHead = new ListNode(-1);
                 newHead.next = newNode;
@@ -167,7 +155,7 @@ public class PrintListInRevesedOrder {
         }
         ListNode n = newHead.next;
         while (n != null) {
-            list.add(n.data);
+            list.add(n.val);
             n = n.next;
         }
         return list;
@@ -179,7 +167,7 @@ public class PrintListInRevesedOrder {
         p.insertAtTail(8);
         p.insertAtTail(9);
         p.insertAtHead(6);
-        p.display();
+        p.display(p.head);
 
         System.out.println();
         p.printLinkedListRecursive(p.head);
@@ -194,7 +182,7 @@ public class PrintListInRevesedOrder {
         ArrayList<Integer> integers1 = p.printLinkedListRecursive2(p.head.next);
 
         for (Integer integer : integers1) {
-            System.out.print(" i="+integer);
+            System.out.print(" i=" + integer);
         }
 
         System.out.println("\n+    ");
@@ -204,7 +192,7 @@ public class PrintListInRevesedOrder {
 
 
         System.out.println();
-        p.display();
+        p.display(p.head);
 
 
     }

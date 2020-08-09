@@ -39,16 +39,6 @@ import java.util.LinkedList;
  */
 public class BinaryTreeMirror_27 {
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     /**
      * 递归
      *
@@ -76,7 +66,7 @@ public class BinaryTreeMirror_27 {
         treeNodes.offerLast(root);
         while (!treeNodes.isEmpty()) {
             TreeNode pop = treeNodes.pop();
-            if (root == null) {
+            if (pop == null) {
                 continue;
             }
             if (pop.right != null) {
@@ -92,54 +82,15 @@ public class BinaryTreeMirror_27 {
         return root;
     }
 
-    /**
-     * 生成二叉树
-     *
-     * @return
-     */
-    public static TreeNode genTree(String preOrder, String inOrder, int preIndex, int inIndex, int count) {
-        if (count <= 0) {
-            return null;
-        }
-        //获取前序遍历的序列的根结点
-        char r = preOrder.charAt(preIndex);
-        //记录根结点在中序遍历中的位置
-        int i = 0;
-        for (; i < count; i++) {
-            if (r == inOrder.charAt(i + inIndex)) {
-                break;
-            }
-        }
-        //创建根结点
-        TreeNode treeNode = new TreeNode(Integer.parseInt(String.valueOf(r)));
-        treeNode.left = genTree(preOrder, inOrder, preIndex + 1, inIndex, i);
-        treeNode.right = genTree(preOrder, inOrder, preIndex + i + 1, inIndex + i + 1, count - i - 1);
-        return treeNode;
-    }
-
-    public static void display(TreeNode root) {
-        LinkedList<TreeNode> queue = new LinkedList();
-        queue.offerLast(root);
-        while (!queue.isEmpty()) {
-            TreeNode pop = queue.pop();
-            System.out.print(pop.val + " ");
-            if (pop.right != null) {
-                queue.offerLast(pop.right);
-            }
-            if (pop.left != null) {
-                queue.offerLast(pop.left);
-            }
-        }
-    }
 
     public static void main(String[] args) {
-        TreeNode root = genTree("4796231", "9764321", 0, 0, 7);
-        display(root);
+        TreeNode root = Utils.genTree("4796231", "9764321", 0, 0, 7);
+        Utils.display(root);
         System.out.println();
         TreeNode treeNode = mirrorTree(root);
-        display(treeNode);
+        Utils.display(treeNode);
         System.out.println();
         treeNode = mirrorTree2(root);
-        display(treeNode);
+        Utils.display(treeNode);
     }
 }

@@ -18,14 +18,6 @@ package org.hdj.AlgorithmPractice.SwordOffer;
 public class GetKthFromEnd_22 {
 
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     /**
      * 时间复杂的 O(N)
@@ -75,17 +67,10 @@ public class GetKthFromEnd_22 {
         return end;
     }
 
-    public static ListNode genNode(int start, int length) {
-        ListNode h = new ListNode(start);
-        if (start == length) {
-            return h;
-        }
-        h.next = genNode(start + 1, length);
-        return h;
-    }
+
 
     public static void main(String[] args) {
-        ListNode listNode = genNode(1, 5);
+        ListNode listNode = Utils.genNode(1, 5);
         ListNode kthFromEnd = getKthFromEnd(listNode, 2);
         System.out.println(kthFromEnd.val);
 
