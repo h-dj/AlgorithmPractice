@@ -29,6 +29,10 @@ public class HeadSort {
             if (temp > elements[j]) {
                 elements[i] = elements[j];
                 //以j为父结点的子树，再次调整堆
+                //对于具有n个结点的完全二叉树
+//                1. 若i=0,则结点为根结点，没有双亲，若i>0,则它的双亲结点编号为 (i-1)/2
+//                2. 若2i+1 >=n ,则编号i结点无左孩子，否则编号2i+1的结点就是它的左孩子
+//                3. 若2i+2 >=n ,则编号i结点无右孩子，否则编号2i+2的结点就是它的右孩子
                 i = j;
                 j = 2 * i + 1;
             } else {
@@ -61,6 +65,16 @@ public class HeadSort {
             elements[i] = temp;
             //使用筛选法调整堆法，调整为大顶堆
             sift(0, i, elements);
+        }
+    }
+
+    /**
+     * 打印堆
+     * @param elements
+     */
+    public static void print(int[] elements){
+        for (int i = 0; i < elements.length;) {
+
         }
     }
 }
