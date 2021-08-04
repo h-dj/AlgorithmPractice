@@ -1,13 +1,12 @@
 package org.hdj.AlgorithmPractice.DataStructure.List.skipList;
 
-import org.hdj.AlgorithmPractice.DataStructure.List.IList;
-
+import java.util.Comparator;
 import java.util.Random;
 import java.util.Stack;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
- * @Description: TODO(这里用一句话描述这个类的作用)
+ * @Description: 跳跃表
  * @Author huangjiajian
  * @Date 2021/7/16 16:42
  * <p>
@@ -183,9 +182,45 @@ public class SkipList<K extends Comparable<K>, V> {
                 stack.add(this.head);
             }
         }
-
+        this.size++;
 
         return null;
+    }
+
+    /**
+     * 删除节点
+     *
+     * @return
+     */
+    public void remove(K key) {
+        if (key == null) {
+            throw new NullPointerException();
+        }
+
+        Node node = this.head;
+        while (node != null) {
+            //如果右指针为空，则向下查找
+            if (node.right == null) {
+                node = node.down;
+            } else if (node.right.key.compareTo(key) > 0) {
+                //如果右节点key 大于 搜索key，则向下搜索
+                node = node.down;
+            } else if (node.right.key.compareTo(key) == 0) {
+                //如果当前节点的右指针节点的key 与搜索key 相等
+                //删除节点
+                node.right = node.right.right;
+                //向下
+                node = node.down;
+            } else {
+                //否则向右查找
+                node = node.right;
+            }
+        }
+
+    }
+
+    public int size() {
+        return this.size;
     }
 
     public void printList() {
@@ -216,19 +251,23 @@ public class SkipList<K extends Comparable<K>, V> {
 
 
     public static void main(String[] args) {
-//        SkipList skipList = new SkipList();
-//
-//        for (int i = 0; i < 20; i++) {
-//            skipList.put(i, Math.random());
-//        }
-//        skipList.printList();
+        SkipList skipList = new SkipList();
 
-        double num = new Random().nextDouble();
-        int level = 1;
-        while ((new Random().nextDouble() < 0.5)) {
-            level++;
+        for (int i = 0; i < 20; i++) {
+            skipList.put(i, Math.random());
         }
+        skipList.printList();
 
-        System.out.println(level);
+        Object o = skipList.get(2);
+        System.out.println(o);
+
+        System.out.println(skipList.size());
+
+
+        skipList.remove(2);
+
+        skipList.printList();
+
+
     }
 }
