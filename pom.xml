@@ -7,14 +7,6 @@
     <groupId>org.hdj.AlgorithmPractice</groupId>
     <artifactId>AlgorithmPractice</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
-    </dependencies>
-
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -23,4 +15,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-dfa</artifactId>
+            <version>5.5.7</version>
+        </dependency>
+    </dependencies>
 </project>

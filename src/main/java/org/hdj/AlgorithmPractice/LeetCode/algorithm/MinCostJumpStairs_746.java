@@ -1,6 +1,4 @@
-package org.hdj.AlgorithmPractice.LeetCode.algorith;
-
-import java.util.Arrays;
+package org.hdj.AlgorithmPractice.LeetCode.algorithm;
 
 /**
  * @author hdj

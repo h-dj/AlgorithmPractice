@@ -10,7 +10,7 @@
 - https://www.cnblogs.com/skywang12345/p/3603935.html
 - https://www.geeksforgeeks.org/
   > 算法可视化工具
-- https://www.cs.usfca.edu/galles/visualization/Algorithms.html
+- `https://www.cs.usfca.edu/galles/visualization/Algorithms.html`
 - http://algorithm-visualizer.org
 - https://visualgo.net/en
   > 内容
@@ -32,8 +32,8 @@
 
 > leetCode
 
-1. [两个数相加](src/main/java/org/hdj/AlgorithmPractice/LeetCode/algorith/TwoSum.java)
-2. [二叉树的直径](src/main/java/org/hdj/AlgorithmPractice/LeetCode/algorith/BrinaryTree_543.java)
+1. [两个数相加](src/main/java/org/hdj/AlgorithmPractice/LeetCode/algorithm/TwoSum.java)
+2. [二叉树的直径](src/main/java/org/hdj/AlgorithmPractice/LeetCode/algorithm/BrinaryTree_543.java)
 
 > 剑指 offer
 

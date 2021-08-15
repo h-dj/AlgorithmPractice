@@ -1,6 +1,4 @@
-package org.hdj.AlgorithmPractice.LeetCode.algorith;
-
-import javax.swing.tree.TreeNode;
+package org.hdj.AlgorithmPractice.LeetCode.algorithm;
 
 /**
  * @author hdj
