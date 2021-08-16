@@ -30,8 +30,12 @@
 
 ##### 三、算法练习
 
-> leetCode
+###### 3.1、leetCode
 
+> 数组
+
+
+> 其他
 1. [两个数相加](src/main/java/org/hdj/AlgorithmPractice/LeetCode/algorithm/TwoSum.java)
 2. [二叉树的直径](src/main/java/org/hdj/AlgorithmPractice/LeetCode/algorithm/BrinaryTree_543.java)
 
