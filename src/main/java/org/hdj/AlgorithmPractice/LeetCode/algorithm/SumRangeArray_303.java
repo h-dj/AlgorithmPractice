@@ -1,4 +1,4 @@
-package org.hdj.AlgorithmPractice.LeetCode.algorith;
+package org.hdj.AlgorithmPractice.LeetCode.algorithm;
 
 import java.util.HashMap;
 import java.util.Map;

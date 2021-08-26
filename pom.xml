@@ -13,6 +13,12 @@
             <artifactId>junit</artifactId>
             <version>4.13.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-dfa</artifactId>
+            <version>5.5.7</version>
+        </dependency>
     </dependencies>
 
 

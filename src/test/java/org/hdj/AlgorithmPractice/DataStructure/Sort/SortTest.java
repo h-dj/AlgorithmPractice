@@ -52,4 +52,13 @@ public class SortTest {
 
         System.out.println(Arrays.toString(elements));
     }
+
+    @Test
+    public void quickSort() {
+        elements = new int[]{2, 4, 6, 8, 1};
+        QuickSort.qSort(elements, 0, elements.length - 1);
+        System.out.println(Arrays.toString(elements));
+
+
+    }
 }

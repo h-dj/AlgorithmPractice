@@ -1,7 +1,6 @@
-package org.hdj.AlgorithmPractice.LeetCode.algorith;
+package org.hdj.AlgorithmPractice.LeetCode.algorithm;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * @author hdj
