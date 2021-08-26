@@ -10,15 +10,15 @@ package org.hdj.AlgorithmPractice.LeetCode.algorith;
  * <p>
  * 字符串的一个子序列是原始字符串删除一些（也可以不删除）字符而不改变剩余字符相对位置形成的新字符串。（例如，"ace"是"abcde"的一个子序列，而"aec"不是）。
  * <p>
- * 示例 1:
+ * 示例1:
  * s = "abc", t = "ahbgdc"
  * <p>
- * 返回 true.
+ * 返回true.
  * <p>
- * 示例 2:
+ * 示例2:
  * s = "axc", t = "ahbgdc"
  * <p>
- * 返回 false.
+ * 返回false.
  * <p>
  * 后续挑战 :
  * <p>

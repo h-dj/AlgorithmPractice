@@ -7,7 +7,7 @@ import java.util.Map;
  * @author hdj
  * @version 1.0
  * @date 6/9/20 12:08 PM
- * @description: 给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。
+ * @description: 给定一个整数数组 nums，求出数组从索引i到j(i≤j) 范围内元素的总和，包含i, j两点。
  * <p>
  * 示例：
  * <p>
@@ -19,7 +19,7 @@ import java.util.Map;
  * 说明:
  * <p>
  * 你可以假设数组不可变。
- * 会多次调用 sumRange 方法。
+ * 会多次调用sumRange方法。
  */
 public class SumRangeArray_303 {
 
