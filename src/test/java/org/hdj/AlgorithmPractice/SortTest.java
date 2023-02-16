@@ -35,49 +35,37 @@ public class SortTest {
      */
     private static void headSort(int[] arr) {
 
-        if (arr == null && arr.length == 0) {
-            return;
+        if(arr == null || arr.length == 0){
+                return;
         }
 
         //堆化处理
-        for (int i = arr.length / 2 - 1; i >= 0; i--) {
-            siftDown(arr, i, arr.length - 1);
+        int leaf = arr.length/2-1;
+        // 从最后一个非叶子结点开始（叶结点自然不用调整，第一个非叶子结点 arr.length/2-1，从左至右，从下至上进行调整。
+        for (int i = leaf; i >=0; i--) {
+            siftDown(arr,i);
         }
 
-        //排序处理
-        for (int i = arr.length - 1; i > 0; i--) {
-            int temp = arr[0];
-            arr[0] = arr[i];
-            arr[i] = temp;
-
-            siftDown(arr, 0, i-1);
-        }
     }
 
 
-    private static void siftDown(int[] arr, int start, int end) {
-        //当前父节点
-        int c = start;
-        int temp = arr[c];
-        //左孩子节点
-        int left = 2 * c + 1;
+    private static void siftDown(int[] arr, int start) {
+            //非叶子节点
+            int half = arr.length / 2;
+            //遍历当前这棵子树
+        while (start < half){
+            //找到左孩子节点
+            int child = ( start << 1) + 1;
+            int c = arr[child];
 
-        //调整位置
-        for (; left <= end; c = left, left = 2 * left + 1) {
+            //判断左右节点那个大
+            int right = child + 1;
+            if (right < arr.length && arr[child] < arr[right]){
 
-            //选出最大的节点
-            if (left < end && arr[left] < arr[left + 1]) {
-                left++;
             }
 
-            if (temp >= arr[left]) {
-                break;
-            } else {
-                //交换位置
-                arr[c] = arr[left];
-                arr[left] = temp;
-            }
         }
+
     }
 
 
